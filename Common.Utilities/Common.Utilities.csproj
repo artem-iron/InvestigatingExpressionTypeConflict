@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>5a226309-4492-4a62-bf68-851dce3b6265</ProjectGuid>
+    <ProjectGuid>{5A226309-4492-4A62-BF68-851DCE3B6265}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Common.Utilities</RootNamespace>
@@ -170,6 +170,12 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MMS.Contracts\MMS.Contracts.csproj">
+      <Project>{2054af79-37d4-41ee-81c2-8ecb56a54dde}</Project>
+      <Name>MMS.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\IronPdf.Native.Chrome.Windows.2022.10.9530\build\net452\IronPdf.Native.Chrome.Windows.targets" Condition="Exists('..\packages\IronPdf.Native.Chrome.Windows.2022.10.9530\build\net452\IronPdf.Native.Chrome.Windows.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -178,4 +184,4 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\IronPdf.Native.Chrome.Windows.2022.10.9530\build\net452\IronPdf.Native.Chrome.Windows.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IronPdf.Native.Chrome.Windows.2022.10.9530\build\net452\IronPdf.Native.Chrome.Windows.targets'))" />
   </Target>
- </Project>
+</Project>
