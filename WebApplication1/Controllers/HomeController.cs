@@ -25,7 +25,19 @@ namespace WebApplication1.Controllers
 
             System.Linq.Expressions.ExpressionType expressionType = System.Linq.Expressions.ExpressionType.Add;
 
-            ViewBag.Title = expressionType.ToString() + asss.StringValue + ass.ToString();
+            var theApplication = new TheApplication();
+
+            ViewBag.Message = $"TheApp {theApplication}\n" +
+                $"{theApplication.ExpressionTypeFromTheBusiness}\n" +
+                $"{theApplication.ExpressionTypeFromTheContract}\n" +
+                $"{theApplication.ExpressionTypeFromTheDataAccess}\n" +
+                $"{theApplication.ExpressionTypeFromTheUtility}\n" +
+                $"{theApplication.OwnExpressionType}\n" +
+                $"{theApplication.OwnWorkBook.DefaultWorkSheet["A1"].StringValue}\n" +
+                $"{theApplication.WorkBookFromTheBusiness.DefaultWorkSheet["A1"].StringValue}\n" +
+                $"{theApplication.WorkBookFromTheUtility.DefaultWorkSheet["A1"].StringValue}\n" +
+                $"{expressionType}\n" +
+                $"{asss.StringValue}";
 
             return View();
         }
