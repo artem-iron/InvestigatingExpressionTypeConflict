@@ -21,7 +21,7 @@ namespace Common.Utilities
             OwnExpressionType = ExpressionType.TypeIs;
 
             OwnWorkBook = WorkBook.Create();
-            OwnWorkBook.DefaultWorkSheet["A1"].Value = "Ass from TheUtility";
+            OwnWorkBook.DefaultWorkSheet["A1"].Value = "WorbookValue from TheUtility";
         }
     }
 }

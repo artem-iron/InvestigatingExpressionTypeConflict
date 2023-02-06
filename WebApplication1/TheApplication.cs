@@ -40,7 +40,7 @@ namespace WebApplication1
             WorkBookFromTheBusiness = TheBusiness.OwnWorkBook;
             WorkBookFromTheUtility = TheUtility.OwnWorkBook;
             OwnWorkBook = WorkBook.Create();
-            OwnWorkBook.DefaultWorkSheet["A1"].Value = "Ass from TheApplication";
+            OwnWorkBook.DefaultWorkSheet["A1"].Value = "WorbookValue from TheApplication";
         }
     }
 }

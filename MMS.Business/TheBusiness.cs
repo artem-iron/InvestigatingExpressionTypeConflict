@@ -33,7 +33,7 @@ namespace MMS.Business
 
             WorkBookFromTheUtility = TheUtility.OwnWorkBook;
             OwnWorkBook = WorkBook.Create();
-            OwnWorkBook.DefaultWorkSheet["A1"].Value = "Ass from TheBusiness";
+            OwnWorkBook.DefaultWorkSheet["A1"].Value = "WorbookValue from TheBusiness";
         }
     }
 }

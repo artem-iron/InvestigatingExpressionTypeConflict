@@ -9,19 +9,21 @@ namespace WebApplication1.Controllers
         {
             IronXL.WorkSheet ws = new IronXL.WorkBook().DefaultWorkSheet;
 
-            ws["A2"].StringValue = "ass";
+            ws["A2"].StringValue = "WorbookValue";
 
-            System.Func<IronXL.Cell, bool> ass = (cell) =>
+            System.Func<IronXL.Cell, bool> expression = (cell) =>
             {
-                if (cell.StringValue == "ass")
+                if (cell.StringValue == "WorbookValue")
                 {
                     return true;
                 }
                 else
+                {
                     return false;
+                }
             };
 
-            IronXL.Cell asss = ws["A1:A2"].FirstOrDefault(ass);
+            IronXL.Cell theCell = ws["A1:A2"].FirstOrDefault(expression);
 
             System.Linq.Expressions.ExpressionType expressionType = System.Linq.Expressions.ExpressionType.Add;
 
@@ -37,7 +39,7 @@ namespace WebApplication1.Controllers
                 $"{theApplication.WorkBookFromTheBusiness.DefaultWorkSheet["A1"].StringValue}\n" +
                 $"{theApplication.WorkBookFromTheUtility.DefaultWorkSheet["A1"].StringValue}\n" +
                 $"{expressionType}\n" +
-                $"{asss.StringValue}";
+                $"{theCell.StringValue}";
 
             return View();
         }
